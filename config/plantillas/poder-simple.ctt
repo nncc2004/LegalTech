@@ -1,0 +1,33 @@
+PODER SIMPLE
+
+En {{ciudad}}, a {{fecha}}, yo, don/doña {{nombre_poderdante}}, cédula de identidad N.º {{rut_poderdante}}, domiciliado/a en {{direccion_poderdante}}, por medio del presente instrumento otorgo poder simple a don/doña {{nombre_apoderado}}, cédula de identidad N.º {{rut_apoderado}}, para que actúe en mi representación y realice las gestiones que se indican a continuación.
+
+El presente poder tiene por objeto autorizar al apoderado para {{facultades_otorgadas}}, pudiendo realizar las actuaciones y presentar los antecedentes necesarios para cumplir dicho cometido ante las instituciones u organismos correspondientes.
+
+{{#clausula_retiro_documentos}}
+Asimismo, autorizo expresamente al apoderado para retirar documentos, certificados, antecedentes y otros instrumentos relacionados con las gestiones señaladas anteriormente, pudiendo firmar los comprobantes de recepción correspondientes.
+{{/clausula_retiro_documentos}}
+
+{{#clausula_tramites_administrativos}}
+El apoderado queda facultado para realizar trámites administrativos relacionados con el objeto de este poder, presentar solicitudes, entregar antecedentes y recibir comunicaciones o respuestas emitidas por la institución correspondiente.
+{{/clausula_tramites_administrativos}}
+
+El presente poder tendrá vigencia hasta {{fecha_vencimiento}}, salvo revocación expresa anterior por parte del poderdante.
+
+Para constancia, firmo el presente documento:
+
+PODERDANTE
+
+Nombre: {{nombre_poderdante}}
+
+RUT: {{rut_poderdante}}
+
+Firma: ______________________________
+
+APODERADO
+
+Nombre: {{nombre_apoderado}}
+
+RUT: {{rut_apoderado}}
+
+Firma: ______________________________

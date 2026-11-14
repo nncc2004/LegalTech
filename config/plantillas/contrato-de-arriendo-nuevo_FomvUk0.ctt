@@ -1,0 +1,17 @@
+CONTRATO DE ARRENDAMIENTO
+
+El arrendador {{nombre_arrendador}} entrega el inmueble al arrendatario, conforme a las condiciones establecidas en el presente contrato.
+
+{{#clausula_estacionamiento}}
+CLÁUSULA DE ESTACIONAMIENTO:
+
+El inmueble incluye un estacionamiento asignado al arrendatario, destinado exclusivamente al aparcamiento de un vehículo particular.
+{{/clausula_estacionamiento}}
+
+{{#clausula_mascotas}}
+CLÁUSULA DE MASCOTAS:
+
+Se permite la tenencia de mascotas en el inmueble, siempre que el arrendatario respete las normas de convivencia y se haga responsable de los daños que estas pudieran ocasionar.
+{{/clausula_mascotas}}
+
+Firma del arrendador: {{nombre_arrendador}}
