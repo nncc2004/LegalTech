@@ -62,3 +62,26 @@ class ContenidoPlantillaForm(forms.Form):
             raise forms.ValidationError(str(error))
 
         return texto
+
+
+class PlantillaEdicionForm(forms.Form):
+
+    nombre = forms.CharField(
+        label="Nombre de la plantilla",
+        max_length=150
+    )
+
+    descripcion = forms.CharField(
+        label="Descripción",
+        widget=forms.Textarea(attrs={"rows": 3})
+    )
+
+    categoria = forms.ModelChoiceField(
+        label="Categoría",
+        queryset=Categoria.objects.all()
+    )
+
+    texto = forms.CharField(
+        label="Contenido jurídico",
+        widget=forms.Textarea(attrs={"rows": 20})
+    )

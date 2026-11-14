@@ -138,32 +138,6 @@ body, h1, h2, h3, p, ul, ol {
 }
 
 
-#color-block1{
-    border:  1px solid black;
-    background-color:var(--primary-color) ;
-}
-
-#color-block2{
-    border:  1px solid black;
-    background-color:var(--secondary-color) ;
-}
-
-
-#color-block3{
-    border:  1px solid black;
-    background-color:var(--text-color) ;
-}
-
-
-#color-block4{
-    border:  1px solid black;
-    background-color:var(--secondary-text-color) ;
-}
-
-.color-palette{
-    display: flex;
-}
-
 
 form{
 

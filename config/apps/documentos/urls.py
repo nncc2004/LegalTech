@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
-from apps.documentos.views.administracion import crear_plantilla_view
-from apps.documentos.views.galeria import biblioteca_view
+
+from apps.documentos.views.administracion import *
+from apps.documentos.views.galeria import *
 from apps.documentos.views.generacion import *
 
 app_name = "documentos"
@@ -41,5 +41,25 @@ urlpatterns = [
         "descargar-y-volver/",
         descargar_y_volver_view,
         name="descargar_y_volver"
+    ),
+    path(
+        "administracion/",
+        panel_administracion_view,
+        name="panel_administracion"
+    ),
+    path(
+        "administracion//plantilla/<int:plantilla_id>/modificar/",
+        modificar_plantilla_view,
+        name="modificar_plantilla"
+    ),
+    path(
+        "administracion//plantilla/<int:plantilla_id>/estado/",
+        cambiar_estado_plantilla_view,
+        name="cambiar_estado_plantilla"
+    ),
+    path(
+        "administracion//plantilla/<int:plantilla_id>/editar/",
+        editar_plantilla_view,
+        name="editar_plantilla"
     ),
 ]

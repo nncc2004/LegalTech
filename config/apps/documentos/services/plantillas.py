@@ -60,13 +60,15 @@ def crear_plantilla(
 
 @transaction.atomic
 def duplicar_plantilla(plantilla, *, autor, nombre=None):
-    """
-    Crea una copia independiente de una plantilla existente.
-    La copia comienza como borrador y como versión inicial.
-    """
+
+    ultima_version = Plantilla.objects.filter(
+        familia_id=plantilla.familia_id
+    ).order_by("-version").values_list(
+        "version", flat=True
+    ).first()
 
     copia = Plantilla(
-        nombre=nombre or f"Copia de {plantilla.nombre}",
+        nombre=nombre or plantilla.nombre,
         descripcion=plantilla.descripcion,
         categoria=plantilla.categoria,
         campos=deepcopy(plantilla.campos),
@@ -75,7 +77,8 @@ def duplicar_plantilla(plantilla, *, autor, nombre=None):
         autor=autor,
         publicada=True,
         activa=True,
-        version=1,
+        version=ultima_version + 1,
+        familia_id=plantilla.familia_id,
         plantilla_anterior=None
     )
 
@@ -125,39 +128,3 @@ def crear_nueva_version(plantilla, *, autor):
     nueva_version.save()
 
     return nueva_version
-
-
-
-
-
-'''
-
-# Crear y duplicar
-def crear_plantilla():
-    pass
-
-def duplicar_plantilla():
-    pass
-
-# Versionamiento
-def crear_nueva_version():
-    pass
-
-def actualizar_borrador():
-    pass
-
-def obtener_ultima_version():
-    pass
-
-# Publicación
-def publicar_plantilla():
-    pass
-
-def despublicar_plantilla():
-    pass
-
-# Validaciones
-def validar_modificacion():
-    pass
-    
-    '''

@@ -1,0 +1,58 @@
+# CONTRATO DE ARRENDAMIENTO
+
+En {{ciudad_contrato}}, a {{fecha_firma}}, comparecen:
+
+Por una parte, don/doña **{{nombre_arrendador}}**, cédula de identidad N.º {{rut_arrendador}}, en adelante denominado/a el ARRENDADOR.
+
+Y por otra parte, don/doña **{{nombre_arrendatario}}**, cédula de identidad N.º {{rut_arrendatario}}, en adelante denominado/a el ARRENDATARIO.
+
+Ambas partes acuerdan celebrar el presente contrato de arrendamiento, conforme a las siguientes cláusulas:
+
+## PRIMERA: INMUEBLE
+
+El ARRENDADOR entrega en arrendamiento al ARRENDATARIO el inmueble ubicado en {{direccion_inmueble}}, destinado exclusivamente a habitación.
+
+## SEGUNDA: RENTA
+
+El ARRENDATARIO se obliga a pagar una renta mensual de ${{monto_arriendo}} pesos chilenos, dentro de los primeros cinco días de cada mes, mediante el medio de pago acordado por las partes.
+
+## TERCERA: OBLIGACIONES
+
+El ARRENDATARIO se obliga a:
+
+1. Pagar oportunamente la renta.
+2. Mantener el inmueble en buenas condiciones de conservación.
+3. Utilizar el inmueble exclusivamente para el destino convenido.
+4. Restituir el inmueble al término del contrato, considerando el desgaste natural por su uso legítimo.
+
+El ARRENDADOR deberá garantizar el uso pacífico del inmueble y realizar las reparaciones que legalmente le correspondan.
+
+## CUARTA: CLÁUSULAS OPCIONALES
+
+{{#clausula_estacionamiento}}
+**ESTACIONAMIENTO:** El inmueble incluye el uso de un espacio de estacionamiento destinado exclusivamente al aparcamiento de un vehículo particular. El ARRENDATARIO deberá respetar las normas de administración y convivencia del inmueble.
+{{/clausula_estacionamiento}}
+
+{{#clausula_mascotas}}
+**TENENCIA DE MASCOTAS:** Se autoriza al ARRENDATARIO a mantener mascotas en el inmueble, siendo responsable de los daños que estas ocasionen y del cumplimiento de las normas de convivencia aplicables.
+{{/clausula_mascotas}}
+
+## QUINTA: ACEPTACIÓN
+
+Las partes declaran haber leído y aceptado las condiciones del presente contrato, firmando dos ejemplares de igual tenor.
+
+**ARRENDADOR**
+
+Nombre: {{nombre_arrendador}}
+
+RUT: {{rut_arrendador}}
+
+Firma: ______________________
+
+**ARRENDATARIO**
+
+Nombre: {{nombre_arrendatario}}
+
+RUT: {{rut_arrendatario}}
+
+Firma: ______________________

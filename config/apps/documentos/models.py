@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+import uuid
+
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
@@ -56,6 +58,11 @@ class Plantilla(models.Model):
         related_name='plantillas',
         null=True,
         blank=True
+    )
+    familia_id = models.UUIDField(
+        default=uuid.uuid4,
+        editable=False,
+        db_index=True
     )
 
     def __str__(self):
