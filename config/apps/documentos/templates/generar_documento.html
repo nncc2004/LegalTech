@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+
+{% block title %}Generar documento{% endblock %}
+
+{% block content %}
+
+<h1 class="title">{{ plantilla.nombre }}</h1>
+
+<p class="title" style="font-style: italic;">{{ plantilla.descripcion }}</p>
+
+<h4 class="title">Rellene los siguientes campos para generar el documento:</h4>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ formulario.as_p }}
+    <div class="button-container">
+                <button type="submit" class="boton2">
+            Guardar datos
+        </button>
+    </div>
+
+</form>
+
+{% endblock %}

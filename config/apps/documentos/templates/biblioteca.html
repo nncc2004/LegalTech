@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Biblioteca de documentos{% endblock %}
+
+{% block extra_css%}
+
+<link  rel="stylesheet" href="{% static 'css/biblioteca.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="title">Biblioteca de documentos</h1>
+
+
+
+{% for categoria in categorias %}
+<div class="categoria">
+    <section>
+        
+        <h2>{{ categoria.nombre }}</h2>
+        <hr>
+
+        {% for plantilla in categoria.plantillas.all %}
+        
+            <article class="plantilla">
+                <div class="left">
+                    <h3>{{ plantilla.nombre }}</h3>
+
+                    <p>{{ plantilla.descripcion }}</p>
+
+                    <p>
+                        Publicada:
+                        {{ plantilla.fecha_creacion|date:"d/m/Y" }}
+                    </p>
+                </div>
+                <div class="right">
+                    <a class="boton" href="{% url 'documentos:generar_documento' plantilla.id %}">Usar plantilla</a>
+                </div>
+            </article>
+
+        {% empty %}
+
+            <p>No hay documentos disponibles.</p>
+
+        {% endfor %}
+
+    </section>
+    
+</div>
+{% empty %}
+
+    <p>No hay documentos publicados actualmente.</p>
+
+{% endfor %}
+
+{% endblock %}

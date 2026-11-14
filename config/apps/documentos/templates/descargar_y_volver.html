@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Descargando documento{% endblock %}
+
+{% block content %}
+
+<h1 class="title">Tu documento está listo</h1>
+
+<p>Preparando la descarga...</p>
+
+<script>
+    const pdfBase64 = "{{ pdf_base64 }}";
+    const nombreArchivo = "{{ nombre_archivo }}.pdf";
+
+    const bytes = Uint8Array.from(
+        atob(pdfBase64),
+        c => c.charCodeAt(0)
+    );
+
+    const blob = new Blob([bytes], {
+        type: "application/pdf"
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const enlace = document.createElement("a");
+    enlace.href = url;
+    enlace.download = nombreArchivo;
+    enlace.click();
+
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+        window.location.href = "{% url 'documentos:biblioteca' %}";
+    }, 1500);
+</script>
+
+{% endblock %}

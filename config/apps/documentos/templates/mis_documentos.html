@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+{%load static%}
+{% block title %}Mis documentos{% endblock %}
+
+{% block extra_css%}
+
+<link  rel="stylesheet" href="{% static 'css/mis_documentos.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="title">Mis documentos</h1>
+
+{% if documentos %}
+    <div class="documentos">
+
+
+    {% for documento in documentos %}
+
+        <div class="documento-container">
+            <div class="left">
+                <h2>{{ documento.plantilla.nombre }}</h2>
+
+                <p class="" style="font-style: italic;">Generado el {{ documento.fecha_creacion|date:"d/m/Y H:i" }}</p>
+            </div>
+
+
+            <div class="right">
+                <a
+                    href="{% url 'documentos:descargar_documento_pdf' documento.id %}"
+                    class="boton2"
+                >
+                    Descargar PDF
+                </a>
+            </div>
+
+        </div>
+
+
+
+    {% endfor %}
+    </div>
+{% else %}
+
+    <p class="title">Aún no tienes documentos generados.</p>
+
+{% endif %}
+
+{% endblock %}

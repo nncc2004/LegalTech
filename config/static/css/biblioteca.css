@@ -1,0 +1,31 @@
+.categoria{
+    width: 60%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+
+.categoria .plantilla   {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border:var(--primary-color) 1px solid ;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.categoria .plantilla .left{
+    width: 80%;
+}
+
+@media screen and (max-width: 800px){
+    .categoria{
+        width: 80%;
+
+    }
+    .categoria .plantilla {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

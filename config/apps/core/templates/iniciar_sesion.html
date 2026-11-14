@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+{%load static%}
+{% block title %}Iniciar sesión{% endblock %}
+
+{% block extra_css%}
+
+<link  rel="stylesheet" href="{% static 'css/iniciar_sesion.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="title">Iniciar sesión</h1>
+
+<h4 class="title">Ingrese sus credenciales:</h4>
+
+<form method="POST">
+    {% csrf_token %}
+    <p>
+            <label for="username">Nombre de usuario</label>
+    <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        autocomplete="username"
+    >
+    </p>
+
+    <p>
+            <label for="password">Contraseña</label>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        autocomplete="current-password"
+    >
+    </p>
+
+
+    <div class="button-container">
+        <button type="submit" class="boton2">
+            Iniciar sesión
+        </button>
+    </div>
+
+</form>
+
+{% endblock %}

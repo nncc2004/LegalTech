@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block extra_css%}
+
+<link  rel="stylesheet" href="{% static 'css/home.css' %}">
+
+{% endblock %}
+{% block content %}
+<div class="inicio">
+    <h1 class="title">Bienvenido a LegalTech</h1>
+
+    <div class="botones">
+        <a href="{% url 'documentos:biblioteca' %}" class="boton">Plantillas Disponibles</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'documentos:mis_documentos' %}" class="boton2">Mis documentos</a>
+        {%else%}
+        <a href="{% url 'core:iniciar_sesion' %}" class="boton2">Inicia Sesión</a>
+        {%endif%}
+    </div>
+</div>
+
+
+{% endblock %}

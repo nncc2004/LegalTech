@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+
+    <link  rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+    <title>{%block title%}{%endblock%}  - LegalTech</title>
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    {% if messages %}
+        {% for message in messages %}
+        <script type="text/javascript">
+            alert("{{ message }}");
+        </script>
+        {% endfor %}
+    {% endif %}
+    <div id="main-content">
+        {%block content%}{%endblock%}
+        {% include "back-to-top.html" %}
+    </div>
+
+    <br>
+        {% include "footer.html" %}
+
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+
+.documentos{
+
+    width: 40%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+
+.documento-container {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border:var(--primary-color) 1px solid ;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.documento-container .left{
+    width: 80%;
+}
+
+@media screen and (max-width: 800px){
+    .documentos{
+        width: 80%;
+
+    }
+    .documento-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

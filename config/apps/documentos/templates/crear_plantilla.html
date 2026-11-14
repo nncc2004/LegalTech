@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Crear plantilla{% endblock %}
+
+{% block content %}
+
+<h1 class="title">Crear nueva plantilla</h1>
+<br><br>
+<form method="POST">
+    {% csrf_token %}
+
+    <h2>Información general</h2>
+
+    {{ formulario_base.as_p }}
+
+    <h2>Contenido jurídico</h2>
+
+    {{ formulario_contenido.as_p }}
+    <div class="button-container">
+            <button type="submit" class="boton2">
+        Crear plantilla
+    </button>
+    </div>
+
+</form>
+
+{% endblock %}
