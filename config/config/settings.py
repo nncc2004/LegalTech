@@ -110,15 +110,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 if DEBUG:
-    STATIC_URL = 'static/'
+    STATIC_URL = '/static/'
 
     STATICFILES_DIRS = [
         BASE_DIR / 'static',
     ]
 else:
     STATIC_URL = '/static/'
-    STATIC_ROOT = '/home/nchehade/legaltech.nchehade.cl/static/'
 
+    STATICFILES_DIRS = [
+        BASE_DIR / 'static',
+    ]
+
+    STATIC_ROOT = '/home/nchehade/legaltech.nchehade.cl/static/'
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
