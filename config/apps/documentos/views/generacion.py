@@ -159,54 +159,28 @@ def mis_documentos_view(request):
 @login_required
 def descargar_documento_pdf_view(request, documento_id):
 
-    # Buscar únicamente documentos pertenecientes al usuario actual.
-    documento = get_object_or_404(
-        request.user.documentos_generados.select_related("plantilla"),
-        id=documento_id
-    )
+    try:
+        documento = get_object_or_404(
+            request.user.documentos_generados.select_related("plantilla"),
+            id=documento_id
+        )
 
-    # Ensamblar el documento.
-    texto = ensamblar_documento(documento)
+        texto = ensamblar_documento(documento)
+        pdf = generar_pdf(texto)
 
-    # Generar el PDF en memoria.
-    pdf = generar_pdf(texto)
+        nombre_archivo = slugify(documento.plantilla.nombre)
 
-    # Preparar la respuesta HTTP.
-    nombre_archivo = slugify(documento.plantilla.nombre)
+        respuesta = HttpResponse(
+            pdf.getvalue(),
+            content_type="application/pdf"
+        )
 
-    respuesta = HttpResponse(
-        pdf.getvalue(),
-        content_type="application/pdf"
-    )
+        respuesta["Content-Disposition"] = (
+            f'attachment; filename="{nombre_archivo}.pdf"'
+        )
 
-    respuesta["Content-Disposition"] = (
-        f'attachment; filename="{nombre_archivo}.pdf"'
-    )
+        return respuesta
 
-    return respuesta
-
-
-
-'''
-def guardar_documento(request, plantilla, datos_temporales, clausulas):
-
-    usuario = request.user if request.user.is_authenticated else None
-
-    Documento.objects.create(
-        usuario=usuario,
-        plantilla=plantilla,
-        campos={
-            "campos": datos_temporales["campos"],
-            "clausulas": clausulas
-        }
-    )
-
-    # Eliminar los datos temporales para evitar duplicaciones.
-    request.session.pop("documento_temporal", None)
-
-    messages.success(request, "Documento guardado correctamente.")
-
-    return redirect("documentos:biblioteca")
-
-
-'''
+    except Exception:
+        logger.exception("Error al descargar PDF del documento %s", documento_id)
+        raise
