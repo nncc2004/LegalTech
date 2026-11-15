@@ -53,5 +53,7 @@
     <p class="title">No hay documentos publicados actualmente.</p>
 
 {% endfor %}
-
+{% if user.is_authenticated %}
+    {% include "chatbot.html" %}
+{% endif %}
 {% endblock %}
