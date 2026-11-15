@@ -123,6 +123,10 @@ else:
     ]
 
     STATIC_ROOT = '/home/nchehade/legaltech.nchehade.cl/static/'
+
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
