@@ -17,7 +17,7 @@ DEBUG = True
 if DEBUG:
     print(10*"\nDEBUG EN TRUE\n")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["legaltech.nchehade.cl"]
 
 
 
