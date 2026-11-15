@@ -12,6 +12,8 @@ from django.http import HttpResponse
 from django.utils.text import slugify
 
 from apps.documentos.services.generadores import generar_pdf
+import logging
+logger = logging.getLogger(__name__)
 
 
 def generar_documento_view(request, plantilla_id):

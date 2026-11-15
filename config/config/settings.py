@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_KEY')
 AI_API_KEY = os.getenv('AI_API_KEY')
 
-DEBUG = True
+DEBUG = False
 if DEBUG:
     print(10*"\nDEBUG EN TRUE\n")
 
