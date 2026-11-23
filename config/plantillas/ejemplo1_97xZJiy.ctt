@@ -1,0 +1,5 @@
+Definir una variable: {{var_1}}
+Definir otra variable: {{var_2}}
+{{#clausula_traslado}}
+Asimismo, autorizo el traslado de {{nombre_participante}} hacia y desde el lugar de realización de la actividad.
+{{/clausula_traslado}}

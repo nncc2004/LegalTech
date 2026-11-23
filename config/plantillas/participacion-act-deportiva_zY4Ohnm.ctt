@@ -1,0 +1,24 @@
+AUTORIZACIÓN PARA PARTICIPACIÓN EN ACTIVIDAD DEPORTIVA
+
+En {{ciudad}}, con fecha {{fecha}}, yo, {{nombre_apoderado}}, cédula de identidad N° {{rut_apoderado}}, en calidad de apoderado/a de {{nombre_participante}}, autorizo su participación en la actividad deportiva denominada {{nombre_actividad}}, organizada por {{entidad_organizadora}}.
+
+La actividad se realizará el día {{fecha_actividad}}, en {{lugar_actividad}}.
+
+{{#clausula_traslado}}
+Asimismo, autorizo el traslado de {{nombre_participante}} hacia y desde el lugar de realización de la actividad.
+{{/clausula_traslado}}
+
+{{#clausula_condicion_fisica}}
+Declaro que he informado a los organizadores sobre cualquier condición física relevante del participante.
+{{/clausula_condicion_fisica}}
+
+{{#clausula_urgencia}}
+En caso de emergencia, autorizo a los organizadores a contactar los servicios de asistencia médica correspondientes y comunicarse conmigo.
+{{/clausula_urgencia}}
+
+Declaro que la información proporcionada es correcta y que otorgo esta autorización voluntariamente.
+
+Nombre del apoderado: {{nombre_apoderado}}
+RUT: {{rut_apoderado}}
+
+Firma: __________________________
